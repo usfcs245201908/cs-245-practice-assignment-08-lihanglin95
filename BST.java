@@ -2,33 +2,54 @@
 public class BST<T> {
 	Node root;
 	
+	/*
+	 * This is the constructor of class BST
+	 */
 	public BST() {
 		root = null;
 	}
 	
+	/*
+	 * This inner class defines Node
+	 */
 	class Node<T>{
 		Comparable data;
 		Node left;
 		Node right;
 		int instance = 0;
 		
+		/*
+		 * This is the constructor of inner class Node
+		 */
 		public Node(Comparable testString) {
 			data = testString;
 		}
 	}
 
+	/*
+	 * This insert method calls the other recursive insert method
+	 */
 	public void insert(Comparable testString) {
 		root = insert(testString, root);	
 	}
 
+	/*
+	 * This find method calls the other recursive find method
+	 */
 	public boolean find(Comparable testString) {
 		return find(testString, root);
 	}
 
+	/*
+	 * This delete method calls the other recursive delete method
+	 */
 	public void delete(Comparable testString) {
 		root = delete(testString, root);
 	}
 
+	/*
+	 * This print method calls the other recursive print method
+	 */
 	public void print() {
 		print(root);
 	}
