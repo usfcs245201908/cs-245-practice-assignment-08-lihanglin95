@@ -33,7 +33,12 @@ public class BST<T> {
 		print(root);
 	}
 	
-	//check if find the testString
+	/**
+	 * This method is to check if there is the target testString in the tree
+	 * @param testString This is the String passed by class Practice08test
+	 * @param node This is the current node that is checking
+	 * @return This returns true if the String is found
+	 */
 	private boolean find(Comparable testString, Node node) {
 		if(node == null)
 			return false;
@@ -47,7 +52,12 @@ public class BST<T> {
 			return find(testString, node.right);	
 	}
 	
-	//add testString
+	/**
+	 * This method is to insert a String to the tree
+	 * @param testString This is the String passed by class Practice08test
+	 * @param node This is the current node that is checking
+	 * @return This returns a node that is the root
+	 */
 	private Node insert(Comparable testString, Node node) {
 		if(node == null)
 			return new Node(testString);
@@ -65,7 +75,12 @@ public class BST<T> {
 			
 	}
 	
-	//delete testString
+	/**
+	 * This method is to delete the String from the tree
+	 * @param testString This is the String passed by class Practice08test
+	 * @param node This is the current node that is checking
+	 * @return This returns a node that is the root
+	 */
 	private Node delete(Comparable testString, Node node) {
 		if(node == null)
 			return null;
@@ -103,7 +118,11 @@ public class BST<T> {
 		}
 	}
 	
-	//remove the smallest testString
+	/**
+	 * This method is to remove the smallest String
+	 * @param node This is the current node that is checking
+	 * @return This returns the smallest String
+	 */
 	private Comparable removesmallest(Node node) {
 		if(node.left.left == null) {
 			Comparable smallest = node.left.data;
@@ -113,18 +132,22 @@ public class BST<T> {
 		return removesmallest(node.left);
 	}
 	
-	//print the tree
+	/**
+	 * This method is to print the tree in order
+	 * @param node This is the current node that is checking
+	 * @return This returns the current node that is printed
+	 */
 	private Node print(Node node) {
 		if(node == null)
 			return null;
 		
 		print(node.left);
-        for (int i = node.instance; i >= 0; i--){
-            System.out.println(node.data);
-        }
+		for (int i = node.instance; i >= 0; i--){
+			System.out.println(node.data);
+		}
         
-        print(node.right);
-        return node;
+		print(node.right);
+		return node;
 	}
 
 }
