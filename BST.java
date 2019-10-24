@@ -18,22 +18,22 @@ public class BST<T> {
 	}
 
 	public void insert(Comparable testString) {
-		root = insert(testString, root);
-		
+		root = insert(testString, root);	
 	}
 
 	public boolean find(Comparable testString) {
 		return find(testString, root);
 	}
 
-	public void delete(String string) {
-		root = delete(string, root);
+	public void delete(Comparable testString) {
+		root = delete(testString, root);
 	}
 
 	public void print() {
 		print(root);
 	}
 	
+	//check if find the testString
 	private boolean find(Comparable testString, Node node) {
 		if(node == null)
 			return false;
@@ -47,6 +47,7 @@ public class BST<T> {
 			return find(testString, node.right);	
 	}
 	
+	//add testString
 	private Node insert(Comparable testString, Node node) {
 		if(node == null)
 			return new Node(testString);
@@ -64,6 +65,7 @@ public class BST<T> {
 			
 	}
 	
+	//delete testString
 	private Node delete(Comparable testString, Node node) {
 		if(node == null)
 			return null;
@@ -101,6 +103,7 @@ public class BST<T> {
 		}
 	}
 	
+	//remove the smallest testString
 	private Comparable removesmallest(Node node) {
 		if(node.left.left == null) {
 			Comparable smallest = node.left.data;
@@ -110,6 +113,7 @@ public class BST<T> {
 		return removesmallest(node.left);
 	}
 	
+	//print the tree
 	private Node print(Node node) {
 		if(node == null)
 			return null;
